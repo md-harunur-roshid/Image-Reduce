@@ -1,0 +1,6 @@
+{
+  "name": "PixSlim",
+  "description": "Resolution-preserving image compressor, web optimizer, and multi-format image converter.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
