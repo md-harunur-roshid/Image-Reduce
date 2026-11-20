@@ -201,6 +201,28 @@ export const COPY = {
         'ব্যাচ প্রসেসিংয়ের মাধ্যমে একসাথে একাধিক ছবি কনভার্ট ও ZIP ডাউনলোড',
       ],
     },
+    faq: {
+      heading: 'সাধারণ জিজ্ঞাসা (FAQ)',
+      subheading: 'Image Reducer ব্যবহার করে ছবির সাইজ কমানো ও ফরমেট রূপান্তর সংক্রান্ত প্রশ্নোত্তর।',
+      items: [
+        {
+          q: 'রেজুলেশন ঠিক রেখে কীভাবে ছবির সাইজ কমানো যায়?',
+          a: 'Image Reducer ডিফল্টভাবে আপনার ছবির মূল প্রস্থ ও উচ্চতা (Width × Height) শতভাগ অক্ষুণ্ণ রাখে। এটি অপ্রয়োজনীয় EXIF মেটাডাটা সরিয়ে এবং স্মার্ট পারসেপচুয়াল কমপ্রেশন বা PNG কোয়ান্টাইজেশন ব্যবহার করে ছবির মান ঠিক রেখেই KB/MB সাইজ কমিয়ে দেয়।',
+        },
+        {
+          q: 'অনলাইন ফর্ম বা চাকরির আবেদনের জন্য ছবি কি ৫০ KB বা ১০০ KB-এর নিচে করা যাবে?',
+          a: 'হ্যাঁ। বাম পাশের প্রোফাইল থেকে "ফর্ম (≤১০০ KB)" নির্বাচন করুন অথবা টার্গেট সাইজ সীমায় 50 KB বা 100 KB সেট করুন—রেজুলেশন না কমিয়েই ছবির সাইজ আপনার নির্ধারিত সীমার মধ্যে চলে আসবে।',
+        },
+        {
+          q: 'কোন কোন ইমেজ ফরমেটে কনভার্ট করা যায়?',
+          a: 'আপনি PNG, JPEG, WebP, AVIF, BMP, GIF বা SVG ছবিকে এক ক্লিকে WebP, JPEG, PNG, AVIF, ICO এবং BMP ফরমেটে কনভার্ট করতে পারবেন।',
+        },
+        {
+          q: 'আমার ছবি কি কোনো সার্ভারে আপলোড হয়?',
+          a: 'না। সব কমপ্রেশন ও কনভার্সন সরাসরি আপনার ব্রাউজারের লোকাল মেমোরিতেই হয়—তাই আপনার ছবি সম্পূর্ণ নিরাপদ ও ব্যক্তিগত থাকে।',
+        },
+      ],
+    },
     footer: 'Image Reducer · ব্রাউজার-ভিত্তিক ইমেজ অপ্টিমাইজার ও ফরমেট কনভার্টার',
   },
   en: {
@@ -401,6 +423,28 @@ export const COPY = {
         'Automatically strips bloated EXIF and camera metadata without touching pixels',
         'Override output format per individual image or apply global batch profiles',
         'Instant single-file download, clipboard copy, or bundled ZIP archive export',
+      ],
+    },
+    faq: {
+      heading: 'Frequently Asked Questions',
+      subheading: 'Common questions about reducing image file size, preserving resolution, and converting formats.',
+      items: [
+        {
+          q: 'How can I reduce image size without losing resolution?',
+          a: 'Image Reducer locks your original width and height pixels at 100% by default while stripping hidden EXIF metadata and applying smart compression or PNG palette quantization.',
+        },
+        {
+          q: 'Can I reduce a photo under 50 KB or 100 KB for portal forms?',
+          a: 'Yes. Pick the Portal Form (≤100 KB) profile or select 50 KB / 100 KB under Max File Size Limit, and Image Reducer automatically tunes quality to stay below your limit while keeping exact dimensions.',
+        },
+        {
+          q: 'Which image formats are supported for conversion?',
+          a: 'You can load PNG, JPEG, WebP, AVIF, BMP, GIF, and SVG files and convert them directly to WebP, JPEG, PNG, AVIF, ICO, or BMP in your browser.',
+        },
+        {
+          q: 'Are my photos uploaded to an external server?',
+          a: 'No. Every optimization and format conversion happens 100% locally inside your browser with zero remote file uploads.',
+        },
       ],
     },
     footer: 'Image Reducer · Client-Side Image Optimizer & Format Converter',

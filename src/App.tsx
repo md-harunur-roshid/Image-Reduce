@@ -2,6 +2,7 @@ import JSZip from 'jszip';
 import { CheckCircle2, Globe, ImagePlus, Moon, Sun } from 'lucide-react';
 import { useCallback, useEffect, useRef, useState } from 'react';
 import { DropZone } from './components/DropZone';
+import { FaqSection } from './components/FaqSection';
 import { FormatGuide } from './components/FormatGuide';
 import { Header } from './components/Header';
 import { PrivacySection } from './components/PrivacySection';
@@ -135,12 +136,33 @@ export default function App() {
   }, [isDark]);
 
   useEffect(() => {
+    document.documentElement.lang = lang;
     try {
       localStorage.setItem(STORAGE_KEYS.lang, lang);
     } catch {
       // ignore
     }
   }, [lang]);
+
+  // Dynamic canonical URL and OpenGraph og:url resolution
+  useEffect(() => {
+    const canonicalUrl = window.location.origin + window.location.pathname;
+    let canonicalLink = document.querySelector<HTMLLinkElement>('link[rel="canonical"]');
+    if (!canonicalLink) {
+      canonicalLink = document.createElement('link');
+      canonicalLink.rel = 'canonical';
+      document.head.appendChild(canonicalLink);
+    }
+    canonicalLink.href = canonicalUrl;
+
+    let ogUrlMeta = document.querySelector<HTMLMetaElement>('meta[property="og:url"]');
+    if (!ogUrlMeta) {
+      ogUrlMeta = document.createElement('meta');
+      ogUrlMeta.setAttribute('property', 'og:url');
+      document.head.appendChild(ogUrlMeta);
+    }
+    ogUrlMeta.content = canonicalUrl;
+  }, []);
 
   useEffect(() => {
     try {
@@ -744,6 +766,9 @@ export default function App() {
 
         {/* Privacy Guarantee */}
         <PrivacySection lang={lang} />
+
+        {/* SEO & User FAQ */}
+        <FaqSection lang={lang} />
       </main>
 
       <footer className="border-t border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-950 py-6">
